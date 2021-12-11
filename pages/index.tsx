@@ -3,7 +3,7 @@ import Home from "../routes/home/Home";
 
 const Index: NextPage = () => {
   return (
-    <div>
+    <div className={"py-100px"}>
       <div className={""}>
         <Home />
       </div>

@@ -1,0 +1,96 @@
+.component {
+  position: relative;
+  z-index: 9999999;
+}
+
+.trigger {
+  padding: 8px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  margin-right: 8px;
+  &:hover {
+    background-color: #00000025;
+  }
+}
+
+.trigger_active {
+  background-color: #00000045;
+}
+
+.section_dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.section_dropdown_visible {
+  display: block;
+}
+
+.genre_nav {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  padding: 4px;
+  font-weight: 600;
+
+  > span {
+    padding: 2px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    &:hover {
+      background-color: #00000025;
+    }
+    &:active {
+      background-color: #00000049;
+    }
+  }
+}
+
+.section_wrap {
+  position: relative;
+  z-index: 999;
+  display: flex;
+  right: 0;
+  height: 600px;
+  overflow: hidden;
+}
+
+.section_ctn {
+  position: absolute;
+  display: flex;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+  height: 600px;
+}
+
+.section {
+  flex-shrink: 0;
+  overflow: auto;
+  padding: 4px;
+}
+
+.trick_item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 4px 8px;
+  justify-content: space-between;
+  color: #457;
+  border-radius: 4px;
+  &:hover {
+    background-color: #00000025;
+  }
+  &:active {
+    background-color: #00000049;
+  }
+}
