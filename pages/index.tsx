@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Home from "../routes/home/Home";
-import { Head } from "next/document";
 
 const Index: NextPage = () => {
   return (
