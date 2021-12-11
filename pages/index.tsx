@@ -1,10 +1,15 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import Home from "../routes/home/Home";
+import { Head } from "next/document";
 
-const Home: NextPage = () => {
-  return <div className={styles.container}>你好世界!</div>;
+const Index: NextPage = () => {
+  return (
+    <div>
+      <div className={""}>
+        <Home />
+      </div>
+    </div>
+  );
 };
 
-export default Home;
+export default Index;
