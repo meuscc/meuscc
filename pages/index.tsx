@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  return <div className={styles.container}>你好世界</div>;
+  return <div className={styles.container}>你好世界!</div>;
 };
 
 export default Home;
