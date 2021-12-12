@@ -30,65 +30,67 @@ export default function Music() {
   }, [currentTrack]);
 
   useEffect(() => {
-    playerRef.current = new Plyr(audioRef.current, {
-      controls: [
-        "play", // Play/pause playback
-        "progress", // The progress bar and scrubber for playback and buffering
-        "current-time", // The current time of playback
-        "duration", // The full duration of the media
-        "volume", // Volume control
-      ],
-    });
-    const persistedCurrentTractString = localStorage.getItem(
-      currentTrackStorageKey
-    );
-    if (persistedCurrentTractString) {
-      const persistedCurrent = JSON.parse(persistedCurrentTractString);
-      setCurrentTrack(persistedCurrent);
-      playerRef.current.source = {
-        type: "audio",
-        title: "Example title",
-        sources: [
-          {
-            src: persistedCurrent.uri,
-            type: "audio/mp3",
-          },
+    setTimeout(() => {
+      playerRef.current = new Plyr(audioRef.current, {
+        controls: [
+          "play", // Play/pause playback
+          "progress", // The progress bar and scrubber for playback and buffering
+          "current-time", // The current time of playback
+          "duration", // The full duration of the media
+          "volume", // Volume control
         ],
-      };
-    } else {
-      playerRef.current.source = {
-        type: "audio",
-        title: "音乐",
-        sources: [
-          {
-            src: musicData[0].uri,
-            type: "audio/mp3",
-          },
-        ],
-      };
-    }
-
-    playerRef.current.on("ended", (event: any) => {
-      const currentTrackIndex = musicData.findIndex(
-        (v) => v.name === currentTrackRef.current?.name
+      });
+      const persistedCurrentTractString = localStorage.getItem(
+        currentTrackStorageKey
       );
-      const nextCurrentTrack = musicData[currentTrackIndex + 1];
-      if (!nextCurrentTrack) {
-        return;
+      if (persistedCurrentTractString) {
+        const persistedCurrent = JSON.parse(persistedCurrentTractString);
+        setCurrentTrack(persistedCurrent);
+        playerRef.current.source = {
+          type: "audio",
+          title: "Example title",
+          sources: [
+            {
+              src: persistedCurrent.uri,
+              type: "audio/mp3",
+            },
+          ],
+        };
+      } else {
+        playerRef.current.source = {
+          type: "audio",
+          title: "音乐",
+          sources: [
+            {
+              src: musicData[0].uri,
+              type: "audio/mp3",
+            },
+          ],
+        };
       }
-      setCurrentTrack(nextCurrentTrack);
-      playerRef.current.source = {
-        type: "audio",
-        title: "音乐",
-        sources: [
-          {
-            src: nextCurrentTrack.uri,
-            type: "audio/mp3",
-          },
-        ],
-      };
-      playerRef.current.play();
-    });
+
+      playerRef.current.on("ended", (event: any) => {
+        const currentTrackIndex = musicData.findIndex(
+          (v) => v.name === currentTrackRef.current?.name
+        );
+        const nextCurrentTrack = musicData[currentTrackIndex + 1];
+        if (!nextCurrentTrack) {
+          return;
+        }
+        setCurrentTrack(nextCurrentTrack);
+        playerRef.current.source = {
+          type: "audio",
+          title: "音乐",
+          sources: [
+            {
+              src: nextCurrentTrack.uri,
+              type: "audio/mp3",
+            },
+          ],
+        };
+        playerRef.current.play();
+      });
+    }, 2000);
   }, []);
 
   return (
