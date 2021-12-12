@@ -161,8 +161,8 @@ export default function Music() {
                               className={s.trick_item}
                             >
                               {track.name
-                                .replaceAll("_", " ")
-                                .replaceAll("-", " - ")}
+                                .replace(/_/g, " ")
+                                .replaceAll(/-/g, " - ")}
                               <span style={{ fontSize: 20 }}>
                                 {track.name === currentTrack?.name ? (
                                   <IconPause />
