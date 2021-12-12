@@ -162,7 +162,7 @@ export default function Music() {
                             >
                               {track.name
                                 .replace(/_/g, " ")
-                                .replaceAll(/-/g, " - ")}
+                                .replace(/-/g, " - ")}
                               <span style={{ fontSize: 20 }}>
                                 {track.name === currentTrack?.name ? (
                                   <IconPause />
