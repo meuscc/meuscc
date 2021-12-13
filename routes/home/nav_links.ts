@@ -123,6 +123,16 @@ export const navs = [
         name: "AI",
         children: [],
       },
+      {
+        name: "内存",
+        children: [
+          {
+            name: "Osiris",
+            href: "https://github.com/danielkrupinski/Osiris",
+            icon: "https://github.githubassets.com/favicons/favicon.svg",
+          },
+        ],
+      },
     ],
   },
   {
@@ -135,6 +145,16 @@ export const navs = [
             name: "Image 2 Svg",
             href: "https://svgco.de/",
             icon: "https://svgco.de/favicon.svg",
+          },
+          {
+            name: "ShareX",
+            href: "https://getsharex.com/",
+            icon: "https://getsharex.com/favicon.ico",
+          },
+          {
+            name: "Desmos",
+            href: "https://www.desmos.com/calculator?lang=zh-CN",
+            icon: "https://www.desmos.com/assets/img/touch-icon-192x192.png",
           },
         ],
       },
