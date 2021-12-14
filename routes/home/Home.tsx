@@ -1,48 +1,54 @@
-import type { NextPage } from "next";
-import styles from "./home.module.scss";
-import { navs } from "./nav_links";
+import Script from 'next/script';
+import styles from './home.module.scss';
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
-    <div className={styles.page}>
-      <h1 style={{ paddingLeft: 20 }}>网址导航</h1>
-      <div className={"relative"}>
-        <div className={styles.nav_ctn}>{createNavs(navs)}</div>
+    <>
+      <Script
+        id="stripe-js"
+        src="https://cdn.jsdelivr.net/npm/phaser/dist/phaser.min.js"
+        onLoad={() => {
+          console.log(Phaser.DOM);
+          const config = {
+            type: Phaser.AUTO,
+            width: 450,
+            height: 600,
+            backgroundColor: '#5f2a55',
+            scene: {
+              create,
+            },
+          };
+          const game = new Phaser.Game(config);
+
+          function preload() {
+            this.load.image('sky', 'https://pixijs.com/images/favicon.png');
+          }
+
+          function create() {
+            // Change "Codey's Adventures\n  in Code World" to the name of your game
+            this.add.text(50, 100, "Codey's Adventures\n  in Code World", {
+              font: '40px Times New Roman',
+              fill: '#ffa0d0',
+            });
+
+            // Change "by Codecademy" to your name!
+            this.add.text(130, 300, 'by Codecademy', {
+              font: '20px Times New Roman',
+              fill: '#ffa0d0',
+            });
+
+            // this.add.image(400, 300, 'sky');
+
+            this.add.image(200, 200, 'sky');
+          }
+        }}
+      />
+      <div className={styles.page}>
+        <h1 style={{ paddingLeft: 20 }}>网址导航</h1>
+        <h1 className="text-red-500 text-3xl font-bold underline">Hello world!</h1>
       </div>
-    </div>
+    </>
   );
 };
-
-const navsStyles = [
-  styles.nav1,
-  styles.nav2,
-  styles.nav3,
-  styles.nav4,
-  styles.nav5,
-];
-
-function createNavs(navs: any, level = 0) {
-  return (
-    <ul className={""}>
-      {navs.map((nav: any) => (
-        <li key={nav.name} className={navsStyles[level]}>
-          {nav.href ? (
-            <a target={"_blank"} href={nav.href}>
-              {nav.icon ? <img src={nav.icon} alt="" /> : <></>}
-              {nav.name}
-            </a>
-          ) : (
-            <span>{nav.name}</span>
-          )}
-          {nav.children?.length > 0 ? (
-            createNavs(nav.children, level + 1)
-          ) : (
-            <></>
-          )}
-        </li>
-      ))}
-    </ul>
-  );
-}
 
 export default Home;

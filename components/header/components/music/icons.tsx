@@ -1,7 +1,7 @@
 export const IconPause = () => {
   return (
     <svg
-      style={{ height: "1em", width: "1em", fill: "currentColor" }}
+      style={{ height: '1em', width: '1em', fill: 'currentColor' }}
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -18,7 +18,7 @@ export const IconPause = () => {
 export const IconPlay = () => {
   return (
     <svg
-      style={{ height: "1em", width: "1em", fill: "currentColor" }}
+      style={{ height: '1em', width: '1em', fill: 'currentColor' }}
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -35,7 +35,7 @@ export const IconPlay = () => {
 export const IconMusic = () => {
   return (
     <svg
-      style={{ height: "1em", width: "1em", fill: "currentColor" }}
+      style={{ height: '1em', width: '1em', fill: 'currentColor' }}
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
