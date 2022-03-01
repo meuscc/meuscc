@@ -46,7 +46,7 @@ marked.use({
 });
 
 export default defineConfig({
-  plugins: [markdown()],
+  plugins: [htmlPlugin, markdown()],
   resolve: {
     alias: [
       { find: /^~/, replacement: "" },
@@ -71,6 +71,18 @@ function markdown() {
           map: null,
         };
       }
+    },
+  };
+}
+
+function htmlPlugin() {
+  return {
+    name: "html-transform",
+    transformIndexHtml(html) {
+      return html.replace(
+        /<title>(.*?)<\/title>/,
+        `<title>Title replaced!</title>`
+      );
     },
   };
 }
