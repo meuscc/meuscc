@@ -14,7 +14,6 @@ Dockerfile*
 .prettierignore
 LICENSE
 .eslintcache
-public
 *.lock
 *.sql
 yarn-error.log
@@ -29,12 +28,13 @@ yarn-error.log
 .watchmanconfig
 *.jpg
 *.jpeg
+*.webp
 *.log
 .idea/
 /iss
 .browserslistrc
 bitbucket-pipelines.yml
-db.json
+.parcel-cache
+.lessrc
+public
 pnpm-lock.yaml
-.next/
-*.env
