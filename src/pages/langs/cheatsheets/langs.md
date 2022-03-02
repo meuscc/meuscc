@@ -1,24 +1,41 @@
 ---
 layout = "post"
 title = "My Dream Editor"
-inline_code_lang = "javascript"
 ---
 
-# 我是头部
+# 我是头部 $ c = \pm\sqrt{a^2 + b^2} $
 
 ```javascript
 const a = 124;
 ```
 
-速度 `const a = 124;`士大夫
-$$ c = \pm\sqrt{a^2 + b^2} $$
+## 速度 `const a = 124;`士大夫
 
-# sdf 士大夫
+dsf
+<m-b>
+c = \pm\sqrt{a^3 + b^3}
+</m-b>
+<m-b> c = \pm\sqrt{a^3 + b^3} </m-b>
 
-# sdf 士大夫
+我爱我的公司 你呢 <m-i>c = \pm\sqrt{a^2 + b^2}</m-i> <m-i>c = \pm\sqrt{a^2 + b^2}</m-i> 士大夫士大夫士大夫士大夫士大夫
 
-# sdf 士大夫
+$$
+c = \pm\sqrt{a^3 + b^3}
+$$
 
-# sdf 士大夫
+1111
 
-我爱我的公司 你呢 $ c = \pm\sqrt{a^2 + b^2} $ 士大夫速度
+$$ c = \pm\sqrt{a^3 + b^3} $$
+
+2222
+
+$$
+c = \pm\sqrt{a^3 + b^3}
+$$
+
+sfs
+$ c = \pm\sqrt{a^3 + b^3} $ sfd $ c = \pm\sqrt{a^3 + b^3} $
+
+$ c = \pm\sqrt{a^3 + b^3} $ sfd $ c = \pm\sqrt{a^3 + b^3} $
+
+$ c = \pm\sqrt{a^3 + b^3} $ sfd $ c = \pm\sqrt{a^3 + b^3} $
