@@ -14,16 +14,11 @@ function frontMatter(text: string): [string, any?] {
 function transformKatex(text: string) {
   return (
     text
-      // .replace(/<m-(b|i)>(\s*.*\s*)<\/m-(b|i)>/g, (match, p1) =>
-      //   match.replace(/\\/g, "\\\\\\\\")
-      // ) // 块级公式
-      .replace(/(\$\$(\s*.*\s*)\$\$)+/g, function ($1, $2) {
-        return (
-          "<m-b>" + $2.replace(/\$/g, "").replace(/\\/g, "\\\\") + "</m-b>"
-        );
+      .replace(/\\\[((.|\s)*?)\\]/g, function ($1, $2) {
+        return "<m-b>" + $2.trim().replace(/\\/g, "\\\\\\\\") + "</m-b>";
       })
       // 行级公式
-      .replace(/\$(\S?.*\S?)\$/, function ($1, $2) {
+      .replace(/\\\(((.|\s)*?)\\\)/g, function ($1, $2) {
         return (
           "<m-i>" + $2.replace(/\$/g, "").replace(/\\/g, "\\\\\\\\") + "</m-i>"
         );
