@@ -17,14 +17,14 @@ export class PageIndex extends LitElement {
     // language=CSS
     css`
       :host {
-        color: #444;
+        color: #fff;
       }
       .main {
         /* From https://css.glass */
         margin: 48px;
         padding: 16px;
         max-width: 950px;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(0, 0, 0, 0.5);
         border-radius: 16px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(5px);

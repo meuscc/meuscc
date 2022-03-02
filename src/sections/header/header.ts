@@ -12,8 +12,10 @@ export class Header extends LitElement {
       .header {
         display: flex;
         justify-content: space-between;
-        background-color: rgba(0, 191, 255, 1);
-        height: 50px;
+        background: rgba(0, 0, 0, 0);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        height: 40px;
         align-items: center;
       }
       .header-left {
