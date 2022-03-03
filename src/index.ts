@@ -1,6 +1,6 @@
 import { Router } from "@vaadin/router";
+import "./layouts/main_layout";
 import "./pages/index/index";
-import "./pages/about";
 import "./pages/sound/index";
 
 const outlet = document.getElementById("root");
@@ -10,10 +10,11 @@ router
   .setRoutes([
     {
       path: "/",
-      component: "page-index",
+      component: "layout-main",
       children: [
-        { path: "/about", component: "page-about" },
+        { path: "/", component: "page-index" },
         { path: "/sound", component: "page-sound" },
+        { path: "/about", component: "page-about" },
       ],
     },
   ])

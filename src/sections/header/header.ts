@@ -12,7 +12,7 @@ export class Header extends LitElement {
       .header {
         display: flex;
         justify-content: space-between;
-        background: rgba(0, 0, 0, 0);
+        background: rgba(255, 255, 255, 0.25);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(5px);
         height: 40px;
@@ -29,9 +29,12 @@ export class Header extends LitElement {
         align-items: center;
         display: flex;
         text-decoration: none;
-        color: #fff;
         padding-left: 16px;
         padding-right: 16px;
+        color: #555;
+        font-size: 12px;
+        font-weight: 600;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
       }
       a:hover {
         background-color: rgba(0, 0, 0, 0.25);
